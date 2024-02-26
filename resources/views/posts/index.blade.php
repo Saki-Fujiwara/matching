@@ -1,24 +1,15 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <title>Blog</title>
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-    </head>
-    <body>
-        <h1>Blog Name</h1>
-        <a href="/posts/create">create</a>
+    <x-app-layout>
+        <h1 class="title2">ブログを投稿してマッチングでつながろう！</h1>
+        <a href="/posts/create" class="post-create">投稿作成</a>
         <div class='posts'>
             @foreach ($posts as $post)
                 <div class='post'>
                     <h2 class='title'>{{ $post->title }}</h2>
-                    <p class='body'>{{ $post->body }}</p>
+                    <p class='body'><a href="/posts/{{ $post->id }}">{{ $post->contents }}</a></p>
                 </div>
             @endforeach
         </div>
         <div class='paginate'>
             {{ $posts->links() }}
         </div>
-    </body>
-</html>
+    </x-app-layout>

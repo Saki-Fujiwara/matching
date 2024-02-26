@@ -15,4 +15,14 @@ class MatchingController extends Controller
         $matching->save();
         return redirect("/posts/".$post->id);
     }
+    
+    public function index() {
+        $senderId = Auth::id();
+        $matching = Matching::with('user')->where('receiver_id',$senderId)->get();
+        
+        return view("posts.matching",['matches' => $matching]);
+    }
 }
+
+
+

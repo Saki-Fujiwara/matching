@@ -3,9 +3,9 @@
      "scripts": {
         "dev": "vite",
         "build": "vite build", 
-        "heroku-postbuild": "npm run build"
+        "heroku-postbuild": "npm run build",
         "engines": {
-        "node": "18.17.1"
+        "node": "18.17.1",
         "npm":"10.2.5"
     }
     },

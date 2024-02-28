@@ -1,0 +1,25 @@
+.btn-custom-login {
+    background-image: linear-gradient(to right, #007bff, #0056b3); /* 青色系グラデーション */
+    border: none;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,.2);
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.btn-custom-login:hover, .btn-custom-login:focus {
+    background-image: linear-gradient(to right, #008cff, #0069d9); /* 明るい青色系グラデーション */
+    box-shadow: 0 4px 8px rgba(0,0,0,.3);
+}
+
+.btn-custom-register {
+    background-image: linear-gradient(to right, #28a745, #1e7e34); /* 緑色系グラデーション */
+    border: none;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,.2);
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.btn-custom-register:hover, .btn-custom-register:focus {
+    background-image: linear-gradient(to right, #34ce57, #218838); /* 明るい緑色系グラデーション */
+    box-shadow: 0 4px 8px rgba(0,0,0,.3);
+}

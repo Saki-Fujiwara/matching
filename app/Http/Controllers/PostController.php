@@ -9,6 +9,10 @@ use Auth;
 use App\Models\User;
 class PostController extends Controller
 {
+    public function open(Post $post)
+{
+    return $post->get();
+}
     public function index(Post $post)
     {
     return view('posts.index')->with(['posts' => $post->getPaginateByLimit()]); 

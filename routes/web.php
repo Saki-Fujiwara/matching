@@ -17,7 +17,7 @@ use App\Http\Controllers\MatchingController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('open');
 });
 
 Route::get('/dashboard', function () {
@@ -29,8 +29,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/posts', [PostController::class, 'index']);   
-    Route::get('/', [PostController::class, 'index']);
+    Route::get('/posts', [PostController::class, 'index'])->name('index');   
     Route::get('/posts/matching',[PostController::class,'matching']);
     Route::get('/posts/{post}',[PostController::class,'show']);
     Route::post('/posts', [PostController::class, 'store']);
@@ -38,8 +37,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/unlike/{postId}',[Post_userController::class,'destroy']);
     Route::post('/matching/{post}',[MatchingController::class,'matching']);
     Route::get('/matching', [MatchingController::class, 'index'])->middleware('auth');
-    Route::get('/', [PostController::class, 'index'])->name('index')->middleware('auth');
-
 });
 
 
